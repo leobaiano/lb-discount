@@ -1,23 +1,24 @@
 <?php
-	/**
-	 * Plugin Name: LB Discount
-	 * Plugin URI:
-	 * Description:
-	 * Author: leobaiano
-	 * Author URI: http://leobaiano.com.br
-	 * Version: 1.0.0
-	 * License: GPLv2 or later
-	 * Text Domain: lb-discount
- 	 * Domain Path: /languages/
-	 */
 
-	if ( ! defined( 'ABSPATH' ) )
-		exit; // Exit if accessed directly.
+/**
+ * Plugin Name: LB Discount
+ * Plugin URI:
+ * Description:
+ * Author: Leo Baiano
+ * Author URI: http://leobaiano.com.br
+ * Version: 1.0.0
+ * License: GPLv2 or later
+ * Text Domain: lb-discount
+ * Domain Path: /languages/
+ */
+
+// Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
+
+if ( ! class_exists( 'LB_Discount' ) ) :
 
 	/**
 	 * LB Discount
-	 *
-	 * @author   Leo Baiano <leobaiano@leobaiano.com.br>
 	 */
 	class LB_Discount {
 		/**
@@ -112,11 +113,17 @@
 		}
 
 	} // end LB Discount
-	add_action( 'plugins_loaded', array( 'LB_Discount', 'get_instance' ), 0 );
 
-	/**
-	 * Include functions
-	 */
-	function include_functions() {
-		require 'class/admin_options.php';
-	}
+endif;
+
+function LB_Discount() {
+    return LB_Discount::get_instance();
+}
+add_action( 'plugins_loaded', 'WooCommerce_NFe');
+
+/**
+ * Include functions
+ */
+function include_functions() {
+	require 'class/admin_options.php';
+}

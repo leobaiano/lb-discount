@@ -1,8 +1,6 @@
 <?php
-	if ( ! defined( 'ABSPATH' ) ) {
-		exit; // Exit if accessed directly
-	}
-?>
+// Exit if accessed directly
+defined( 'ABSPATH' ) || exit; ?>
 <div class="wrap">
 	<h2>
 		<?php _e( 'LB Discount Options', 'lb-discount' ); ?>
@@ -20,5 +18,4 @@
 			submit_button();
 		?>
 	</form>
-
 </div>
