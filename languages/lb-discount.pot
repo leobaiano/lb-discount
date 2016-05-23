@@ -1,0 +1,68 @@
+# Copyright (C) 2016 Leo Baiano
+# This file is distributed under the GNU General Public License v3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: LB Discount 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/leobaiano/lb-discount\n"
+"POT-Creation-Date: 2016-05-23 17:26:37+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Renato Alves <contato@ralv.es\n"
+"Language-Team: Renato Alves <contato@ralv.es\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;_ex:1,2c;_nx:4c,1,2;_"
+"nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2;"
+"\n"
+"X-Textdomain-Support: yes\n"
+
+#. Description of the plugin/theme
+msgid "LB Discount"
+msgstr ""
+
+#: class/admin_options.php:58
+msgid "Discount Percentage"
+msgstr ""
+
+#: class/view_options.php:6
+msgid "LB Discount Options"
+msgstr ""
+
+#: class/view_options.php:11
+msgid "Saved settings"
+msgstr ""
+
+#: class/views/html-notice-missing-woocommerce.php:23
+msgid "LB_Discount"
+msgstr ""
+
+#: class/views/html-notice-missing-woocommerce.php:23
+msgid "depends on the last version of WooCommerce to work!"
+msgstr ""
+
+#: class/views/html-notice-missing-woocommerce.php:26
+msgid "Active WooCommerce"
+msgstr ""
+
+#: class/views/html-notice-missing-woocommerce.php:35
+msgid "Install WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/leobaiano/lb-discount"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Leo Baiano"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://leobaiano.com.br"
+msgstr ""
