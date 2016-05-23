@@ -1,0 +1,12 @@
+{
+  "name": "lb-discount",
+  "description": "LB Discount",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-wp-i18n": "^0.5.4",
+    "load-grunt-tasks": "^3.3.0"
+  },
+  "author": "Leo Baiano",
+  "homepage": "https://github.com/leobaiano/lb-discount"
+}

@@ -1,18 +1,31 @@
 <?php
-	/**
-	 * Plugin Name: LB Discount
-	 * Plugin URI:
-	 * Description: LB Discount
-	 * Author: leobaiano
-	 * Author URI: http://leobaiano.com.br
-	 * Version: 1.0.0
-	 * License: GPLv2 or later
-	 * Text Domain: lb-discount
- 	 * Domain Path: /languages/
-	 */
 
-	if ( ! defined( 'ABSPATH' ) )
-		exit; // Exit if accessed directly.
+/**
+ * LB Discount plugin
+ *
+ * @link              https://github.com/leobaiano/lb-discount
+ * @since             1.0.0
+ * @package           LB Discount
+ *
+ * @wordpress-plugin
+ * Plugin Name:       LB Discount
+ * Plugin URI:        https://github.com/leobaiano/lb-discount
+ * Description:       LB Discount
+ * Version:           1.0.0
+ * Author:            Leo Baiano
+ * Author URI:        http://leobaiano.com.br
+ * Text Domain:       lb-discount
+ * Domain Path:       /languages
+ *
+ * Copyright: © 2016
+ * License: GNU General Public License v3.0
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ */
+
+// Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
+
+if ( ! class_exists( 'LB_Discount' ) ) :
 
 	/**
 	 * LB Discount Class
@@ -48,9 +61,11 @@
         }
 
 		/**
-		 * Initialize the plugin
-		 */
-		private function __construct() {}
+         * A dummy constructor to prevent LB_Discount from being loaded more than once.
+         * 
+         * @see LB_Discount::get_instance()
+         */
+        private function __construct() { /* Do nothing here */ }
 
 		/**
          * Sets some globals for the plugin
@@ -68,11 +83,9 @@
 
 		/**
          * Include needed files.
-         *
-         * @since 1.0.0
          */
         private function includes() {
-        	require( $this->class . 'admin_options.php'  );
+        	require( $this->class . 'admin_options.php' );
         }
 		
 		private function setup_hooks() {
@@ -81,9 +94,6 @@
                 add_action( 'admin_notices', array( $this, 'woocommerce_missing_notice' ) );
                 return;
             }
-
-			// Include class
-			add_action( 'init', 		array( $this, 'include_functions' ) );
 
 			// Get options
 			add_action( 'init', 		array( $this, 'get_options' ) );
@@ -106,8 +116,6 @@
 
 		/**
          * Load the plugin text domain for translation.
-         *
-         * @since 1.0.0
          */
         public function load_plugin_textdomain() {
             // Traditional WordPress plugin locale filter
@@ -140,11 +148,14 @@
 		 */
 		public function apply_discount() {
 			global $woocommerce;
-			if ( is_admin() && ! defined( 'DOING_AJAX' ) )
-				return;
 
-			if ( !is_user_logged_in() )
+			if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
 				return;
+            }
+
+			if ( !is_user_logged_in() ) {
+				return;
+            }
 
 			$user_ID = get_current_user_id();
 
@@ -157,5 +168,18 @@
 
 	} // end LB Discount
 
+endif;
 
-	add_action( 'plugins_loaded', array( 'LB_Discount', 'get_instance' ), 0 );
+/**
+ * The main function responsible for returning the one true LB_Discount Instance.
+ *
+ * @since 1.0.0
+ *
+ * @return LB_Discount The one true LB_Discount Instance.
+ */
+function LB_Discount() {
+    return LB_Discount::get_instance();
+}
+add_action( 'plugins_loaded', 'LB_Discount');
+
+// That's it! =)
