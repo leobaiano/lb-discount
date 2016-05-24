@@ -10,7 +10,7 @@
  * @wordpress-plugin
  * Plugin Name:       LB Discount
  * Plugin URI:        https://github.com/leobaiano/lb-discount
- * Description:       LB Discount
+ * Description:       Apply a percentage discount on the first purchase
  * Version:           1.0.0
  * Author:            Leo Baiano
  * Author URI:        http://leobaiano.com.br
@@ -163,7 +163,9 @@ if ( ! class_exists( 'LB_Discount' ) ) :
 
 			$discount = -$surcharge;
 
-			$woocommerce->cart->add_fee( 'Discount first purchase ( ' . $this->percentage . '% )', $discount, true, '' );
+            $message = __( 'Discount first purchase', 'lb-discount' );
+
+			$woocommerce->cart->add_fee(  $message . ' ( ' . $this->percentage . '% )', $discount, true, '' );
 		}
 
 	} // end LB Discount
